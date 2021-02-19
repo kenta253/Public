@@ -1,0 +1,44 @@
+<div class = title>
+    <h1>Ruby on Rails スケジュール管理アプリ</h1>
+</div>
+
+<h2>スケジュール一覧</h2>
+
+<table> 
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>スケジュール更新日</th>
+            <th>確認</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @myapps.each do |myapp| %>
+            <tr>
+                <td><%= myapp.id %></td>
+                <td><%= myapp.title %></td>
+                <td><%= myapp.start %></td>
+                <td><%= myapp.finish %></td>
+                <td><%= myapp.check %></td>
+                <td><%= myapp.updated_at.to_s(:datetime_jp) %></td>
+            　　<td>
+                <%= link_to "確認", myapp %>
+            　　</td>
+    　　　　　　　　　   <td>
+                    <%= link_to "編集", [:edit, myapp] %>
+                </td>
+                <td>
+                    <%= link_to "削除", myapp, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<p><%= link_to "スケジュール新規登録", :new_myapp %></p>

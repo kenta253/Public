@@ -1,0 +1,30 @@
+<h2>ユーザー詳細</h2>
+
+<table>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @myapp.title %></td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td><%= @myapp.start %></td>
+    </tr>
+    <tr>
+        <th>終了日</th>
+        <td><%= @myapp.finish %></td>
+    </tr>
+    <tr>
+        <th>終日</th>
+        <td><%= @myapp.allday %></td>
+    </tr>
+    <tr>
+        <th>メモ</th>
+        <td><%= @myapp.memo %></td>
+    </tr>
+</table>
+
+<div>
+    <ul>
+        <li><%= link_to "ユーザー情報一覧に戻る", :myapps %></li>
+    </ul>
+</div>
